@@ -83,6 +83,11 @@ isNamed s =
       Named _ -> True
       _       -> False
 
+isEmpty :: SumTypeFields -> Bool
+isEmpty (Anonymous []) = True
+isEmpty (Named []) = True
+isEmpty _ = False
+
 data SumTypeConstructor
     = STC
     { _stcName    :: String
